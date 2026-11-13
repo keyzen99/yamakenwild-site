@@ -64,3 +64,5 @@ footer p { margin: 0 0 6px; }
   padding: 8px 10px; border-radius: 8px; background: rgba(0,0,0,.85); color: #9fe870;
   font: 12px/1.5 Menlo, monospace; white-space: pre-wrap;
 }
+.links a { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.links svg { width: 18px; height: 18px; fill: currentColor; flex: none; }
