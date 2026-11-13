@@ -33,14 +33,26 @@
     window.fbq("init", CONFIG.PIXEL_ID);
   }
 
-  function send(name, params) {
-    if (fired[name]) return;
+  // 同じタブのあいだは各1回だけ（再読み込みで水増ししない）。sessionStorage が使えない環境ではページ内だけで防ぐ
+  function once(name) {
+    if (fired[name]) return false;
     fired[name] = true;
+    try {
+      if (sessionStorage.getItem("ymw_sent_" + name)) return false;
+      sessionStorage.setItem("ymw_sent_" + name, "1");
+    } catch (e) { /* 使えなければページ内の印だけ */ }
+    return true;
+  }
+
+  function send(name, params) {
+    if (!once(name)) return;
+    params = params || {};
+    if (window.YMW_LANG) params.lang = window.YMW_LANG;
     if (CONFIG.PIXEL_ID && window.fbq) {
       if (name === "PageView") window.fbq("track", "PageView");
-      else window.fbq("trackCustom", name, params || {});
+      else window.fbq("trackCustom", name, params);
     }
-    log("event " + name + (params ? " " + JSON.stringify(params) : "") + (CONFIG.PIXEL_ID ? "" : "（PIXEL_ID 未設定＝送っていない）"));
+    log("event " + name + " " + JSON.stringify(params) + (CONFIG.PIXEL_ID ? "" : "（PIXEL_ID 未設定＝送っていない）"));
   }
 
   send("PageView");
