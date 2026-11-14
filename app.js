@@ -5,7 +5,7 @@
   "use strict";
 
   var CONFIG = {
-    PIXEL_ID: "",                                   // YW の広告アカウントで作ったピクセル（COO が入れる）
+    PIXEL_ID: "2274349289802625",                   // YW の広告アカウントのピクセル「YAMAKEN.WILD site」（2026-11-14 作成）
     SPOTIFY_URI: "spotify:track:4eJJGgnir1jf80eSIGvyRN", // いま推す1曲＝TAIFU
     TRACK_NAME: "TAIFU",
     YOUTUBE_ID: "C9PUmKzTyMo",                      // TAIFU の MV
@@ -30,6 +30,7 @@
     /* eslint-disable */
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
     /* eslint-enable */
+    window.fbq("set", "autoConfig", false, CONFIG.PIXEL_ID); // 自動イベント（ボタンのクリック等の推測）を送らない＝決めた6つだけで学ばせる
     window.fbq("init", CONFIG.PIXEL_ID);
   }
 
