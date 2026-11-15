@@ -42,7 +42,7 @@
       pixel: "Halaman ini memakai Meta Pixel untuk mengetahui iklan mana yang membawa pendengar. Halaman ini tidak pernah meminta Anda masuk atau mengisi apa pun."
     },
     ja: {
-      who: "東京発、オルタナティブ R&B。曲も歌も、自分で。",
+      who: "東京発、オルタナティブ R&B のシンガーソングライター。",
       intro: "歌でつづる、SF の物語。",
       series: "YouTube でシリーズを観る",
       ainote: "映像は AI でつくっています。",
