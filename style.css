@@ -31,7 +31,9 @@ h1 { margin: 4px 0 6px; font-size: 32px; font-weight: 500; letter-spacing: .08em
 .who { margin: 0; font-size: 15px; color: var(--text); }
 
 section { padding: 24px 20px; border-top: 1px solid var(--line); }
-section.story { border-top: 0; padding-top: 12px; }
+section.listen { border-top: 0; padding-top: 12px; }
+.story h2.series { color: var(--text); font-size: 15px; letter-spacing: .3em; }
+.ai-note { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
 h2 { margin: 0 0 12px; font-size: 12px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
 .story p { margin: 0 0 12px; }
 .story strong { font-weight: 500; }

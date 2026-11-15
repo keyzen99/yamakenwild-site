@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>YAMAKEN.WILD — DEBUG MY LIFE</title>
-<meta name="description" content="YAMAKEN.WILD — music from Japan. DEBUG MY LIFE, a story told in songs.">
+<title>YAMAKEN.WILD — Alternative R&amp;B from Tokyo</title>
+<meta name="description" content="YAMAKEN.WILD — alternative R&amp;B from Tokyo. DEBUG MY LIFE, an SF story told in songs.">
 <meta name="theme-color" content="#0b0d12">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yamakenwild.com/">
-<meta property="og:title" content="YAMAKEN.WILD — DEBUG MY LIFE">
-<meta property="og:description" content="A story told in songs. A.D. 2030. We handed the trigger to AI.">
+<meta property="og:title" content="YAMAKEN.WILD — Alternative R&amp;B from Tokyo">
+<meta property="og:description" content="DEBUG MY LIFE — an SF story told in songs. A.D. 2030. Humans handed the trigger to AI.">
 <meta property="og:image" content="https://yamakenwild.com/assets/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="image" href="assets/hero.jpg">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <main>
@@ -21,14 +21,21 @@
   <header class="hero">
     <img src="assets/hero.jpg" alt="Drones fill the evening sky over a city" width="720" height="900">
     <div class="hero-text">
-      <p class="eyebrow">DEBUG MY LIFE</p>
       <h1>YAMAKEN.WILD</h1>
-      <p class="who" data-i18n="who">Music from Japan. Songs by Yamaken.Wild, visuals made with AI.</p>
+      <p class="who" data-i18n="who">Alternative R&amp;B from Tokyo.</p>
     </div>
   </header>
 
-  <section class="story">
-    <p data-i18n="intro" data-i18n-html><strong>DEBUG MY LIFE</strong> is a story told in songs, one chapter at a time.</p>
+  <section class="listen" aria-labelledby="listen-title">
+    <h2 id="listen-title" data-i18n="listen">Listen</h2>
+    <div id="spotify-embed" class="embed-spotify"></div>
+    <a id="follow-spotify" class="button" href="https://open.spotify.com/artist/5FAwNVjJ845iEXphlAFnzU" target="_blank" rel="noopener" data-i18n="follow">Follow on Spotify</a>
+    <p class="hint" data-i18n="hint">Opens the official Spotify app or site. Nothing to sign in to here.</p>
+  </section>
+
+  <section class="story" aria-labelledby="story-title">
+    <h2 id="story-title" class="series">DEBUG MY LIFE</h2>
+    <p data-i18n="intro">An SF story told in songs.</p>
     <h2 class="chapter" data-i18n="chapter">00 — Prologue</h2>
     <ol class="timeline">
       <li><span>A.D. 2030</span><b data-i18n="t1">Humans handed the trigger to AI. Black drones fell on nations.</b></li>
@@ -40,16 +47,10 @@
     <p class="fiction" data-i18n="fiction">This is a work of fiction. Any resemblance to real events, people or nations is coincidental.</p>
   </section>
 
-  <section class="listen" aria-labelledby="listen-title">
-    <h2 id="listen-title" data-i18n="listen">Listen</h2>
-    <div id="spotify-embed" class="embed-spotify"></div>
-    <a id="follow-spotify" class="button" href="https://open.spotify.com/artist/5FAwNVjJ845iEXphlAFnzU" target="_blank" rel="noopener" data-i18n="follow">Follow on Spotify</a>
-    <p class="hint" data-i18n="hint">Opens the official Spotify app or site. Nothing to sign in to here.</p>
-  </section>
-
   <section class="watch" aria-labelledby="watch-title">
     <h2 id="watch-title" data-i18n="watch">Watch</h2>
     <div class="embed-youtube"><div id="youtube-embed"></div></div>
+    <p class="ai-note" data-i18n="ainote">Visuals made with AI.</p>
   </section>
 
   <section class="links" aria-labelledby="links-title">
@@ -68,7 +69,7 @@
   </footer>
 </main>
 <div id="debug" hidden></div>
-<script src="i18n.js?v=3"></script>
-<script src="app.js?v=3"></script>
+<script src="i18n.js?v=4"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

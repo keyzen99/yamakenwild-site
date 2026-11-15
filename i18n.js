@@ -1,11 +1,12 @@
 // 4言語（英語・インドネシア語・日本語・スペイン語）。選ぶ順＝?lang= → このタブで選んだ言語 → ブラウザの言語 → 英語。
-// 年表の日本語は第0章のナレーション、英語は第0章の字幕と同じ文（MUS-147）。
+// 年表の日本語は第0章のナレーション、英語は第0章の字幕と同じ文（MUS-147）。who と intro は 11/15 オーナー OK（日本語は訳さず日本語として書く）。
 (function () {
   "use strict";
   var S = {
     en: {
-      who: "Music from Japan. Songs by Yamaken.Wild, visuals made with AI.",
-      intro: "<strong>DEBUG MY LIFE</strong> is a story told in songs, one chapter at a time.",
+      who: "Alternative R&B from Tokyo.",
+      intro: "An SF story told in songs.",
+      ainote: "Visuals made with AI.",
       chapter: "00 — Prologue",
       t1: "Humans handed the trigger to AI. Black drones fell on nations.",
       t2: "A year later, a white AI was built. It served no nation. It only defended.",
@@ -21,8 +22,9 @@
       pixel: "This page uses the Meta Pixel to learn which ads bring listeners. It never asks you to sign in or enter anything."
     },
     id: {
-      who: "Musik dari Jepang. Lagu oleh Yamaken.Wild, visual dibuat dengan AI.",
-      intro: "<strong>DEBUG MY LIFE</strong> adalah kisah yang diceritakan lewat lagu, satu bab demi satu bab.",
+      who: "R&B alternatif dari Tokyo.",
+      intro: "Kisah fiksi ilmiah yang dituturkan lewat lagu.",
+      ainote: "Visual dibuat dengan AI.",
       chapter: "00 — Prolog",
       t1: "Manusia menyerahkan pelatuk kepada AI. Kawanan drone hitam menyerang negara-negara.",
       t2: "Setahun kemudian, sebuah AI putih diciptakan. Ia tidak memihak negara mana pun. Ia hanya melindungi.",
@@ -38,8 +40,9 @@
       pixel: "Halaman ini memakai Meta Pixel untuk mengetahui iklan mana yang membawa pendengar. Halaman ini tidak pernah meminta Anda masuk atau mengisi apa pun."
     },
     ja: {
-      who: "日本の音楽。曲は Yamaken.Wild、映像は AI でつくっています。",
-      intro: "<strong>DEBUG MY LIFE</strong> は、曲で語る物語。1曲ずつ、1章ずつ。",
+      who: "東京発、オルタナティブ R&B。",
+      intro: "歌でつづる、SF の物語。",
+      ainote: "映像は AI でつくっています。",
       chapter: "00 — プロローグ",
       t1: "人は、引き金をAIに渡した。黒いドローンの群れが、国を襲った。",
       t2: "翌年、白いAIが作られた。どの国にも属さず、ただ守るためだけに。",
@@ -55,8 +58,9 @@
       pixel: "このページは、どの広告から聴いてくれる人が来たかを知るために Meta ピクセルを使っています。ログインや入力を求めることはありません。"
     },
     es: {
-      who: "Música de Japón. Canciones de Yamaken.Wild, imágenes creadas con IA.",
-      intro: "<strong>DEBUG MY LIFE</strong> es una historia contada en canciones, capítulo a capítulo.",
+      who: "R&B alternativo desde Tokio.",
+      intro: "Una historia de ciencia ficción contada en canciones.",
+      ainote: "Imágenes creadas con IA.",
       chapter: "00 — Prólogo",
       t1: "La humanidad le entregó el gatillo a la IA. Enjambres de drones negros cayeron sobre las naciones.",
       t2: "Un año después, se creó una IA blanca. No servía a ninguna nación. Solo defendía.",
