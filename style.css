@@ -28,7 +28,8 @@ a { color: var(--text); }
 .hero-text { position: absolute; left: 20px; right: 20px; bottom: 16px; z-index: 1; }
 .eyebrow { margin: 0; font-size: 12px; font-weight: 500; letter-spacing: .3em; color: var(--accent); }
 h1 { margin: 4px 0 6px; font-size: 32px; font-weight: 500; letter-spacing: .08em; }
-.who { margin: 0; font-size: 15px; color: var(--text); }
+.who { margin: 0; font-size: 17px; font-weight: 500; color: var(--text); }
+.sub { margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: rgba(233,236,241,.78); }
 
 section { padding: 24px 20px; border-top: 1px solid var(--line); }
 section.listen { border-top: 0; padding-top: 12px; }

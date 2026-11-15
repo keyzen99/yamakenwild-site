@@ -1,11 +1,12 @@
 // 4言語（英語・インドネシア語・日本語・スペイン語）。選ぶ順＝?lang= → このタブで選んだ言語 → ブラウザの言語 → 英語。
-// 年表の日本語は第0章のナレーション、英語は第0章の字幕と同じ文（MUS-147）。who と intro は 11/15 オーナー OK（日本語は訳さず日本語として書く）。
+// 年表の日本語は第0章のナレーション、英語は第0章の字幕と同じ文（MUS-147）。who・sub・intro は 11/15 夜オーナー OK＝立ち位置は「SF の物語を歌と映像で描く・人の創造をテクノロジーで」（日本語は訳さず日本語として書く）。
 (function () {
   "use strict";
   var S = {
     en: {
-      who: "Alternative R&B artist / producer from Tokyo.",
-      intro: "An SF story told in songs.",
+      who: "SF stories, told in songs and visuals.",
+      sub: "Alternative R&B from Tokyo. Human creativity, extended with technology.",
+      intro: "The first story.",
       series: "Watch the series on YouTube",
       ainote: "Visuals made with AI.",
       chapter: "00 — Prologue",
@@ -23,8 +24,9 @@
       pixel: "This page uses the Meta Pixel to learn which ads bring listeners. It never asks you to sign in or enter anything."
     },
     id: {
-      who: "Artis / produser R&B alternatif dari Tokyo.",
-      intro: "Kisah fiksi ilmiah yang dituturkan lewat lagu.",
+      who: "Kisah fiksi ilmiah, dituturkan lewat lagu dan visual.",
+      sub: "R&B alternatif dari Tokyo. Kreativitas manusia, diperluas dengan teknologi.",
+      intro: "Kisah pertamanya.",
       series: "Tonton serinya di YouTube",
       ainote: "Visual dibuat dengan AI.",
       chapter: "00 — Prolog",
@@ -42,8 +44,9 @@
       pixel: "Halaman ini memakai Meta Pixel untuk mengetahui iklan mana yang membawa pendengar. Halaman ini tidak pernah meminta Anda masuk atau mengisi apa pun."
     },
     ja: {
-      who: "東京発、オルタナティブ R&B アーティスト／プロデューサー。",
-      intro: "歌でつづる、SF の物語。",
+      who: "SF の物語を、歌と映像で描く。",
+      sub: "東京発、オルタナティブ R&B。人の創造を、テクノロジーでかたちにする。",
+      intro: "その最初の物語。",
       series: "YouTube でシリーズを観る",
       ainote: "映像は AI でつくっています。",
       chapter: "00 — プロローグ",
@@ -61,8 +64,9 @@
       pixel: "このページは、どの広告から聴いてくれる人が来たかを知るために Meta ピクセルを使っています。ログインや入力を求めることはありません。"
     },
     es: {
-      who: "Artista / productor de R&B alternativo desde Tokio.",
-      intro: "Una historia de ciencia ficción contada en canciones.",
+      who: "Historias de ciencia ficción, contadas en canciones e imágenes.",
+      sub: "R&B alternativo desde Tokio. Creatividad humana, ampliada con tecnología.",
+      intro: "La primera historia.",
       series: "Mira la serie en YouTube",
       ainote: "Imágenes creadas con IA.",
       chapter: "00 — Prólogo",
