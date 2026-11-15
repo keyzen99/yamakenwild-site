@@ -4,7 +4,7 @@
   "use strict";
   var S = {
     en: {
-      who: "Alternative R&B from Tokyo. Written & sung by me.",
+      who: "Alternative R&B artist / producer from Tokyo.",
       intro: "An SF story told in songs.",
       series: "Watch the series on YouTube",
       ainote: "Visuals made with AI.",
@@ -23,7 +23,7 @@
       pixel: "This page uses the Meta Pixel to learn which ads bring listeners. It never asks you to sign in or enter anything."
     },
     id: {
-      who: "R&B alternatif dari Tokyo. Ditulis dan dinyanyikan sendiri.",
+      who: "Artis / produser R&B alternatif dari Tokyo.",
       intro: "Kisah fiksi ilmiah yang dituturkan lewat lagu.",
       series: "Tonton serinya di YouTube",
       ainote: "Visual dibuat dengan AI.",
@@ -42,7 +42,7 @@
       pixel: "Halaman ini memakai Meta Pixel untuk mengetahui iklan mana yang membawa pendengar. Halaman ini tidak pernah meminta Anda masuk atau mengisi apa pun."
     },
     ja: {
-      who: "東京発、オルタナティブ R&B のシンガーソングライター。",
+      who: "東京発、オルタナティブ R&B アーティスト／プロデューサー。",
       intro: "歌でつづる、SF の物語。",
       series: "YouTube でシリーズを観る",
       ainote: "映像は AI でつくっています。",
@@ -61,7 +61,7 @@
       pixel: "このページは、どの広告から聴いてくれる人が来たかを知るために Meta ピクセルを使っています。ログインや入力を求めることはありません。"
     },
     es: {
-      who: "R&B alternativo desde Tokio. Escrito y cantado por mí.",
+      who: "Artista / productor de R&B alternativo desde Tokio.",
       intro: "Una historia de ciencia ficción contada en canciones.",
       series: "Mira la serie en YouTube",
       ainote: "Imágenes creadas con IA.",
