@@ -9,7 +9,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--text); }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
@@ -32,7 +32,12 @@ h1 { margin: 4px 0 6px; font-size: 32px; font-weight: 500; letter-spacing: .08em
 
 section { padding: 24px 20px; border-top: 1px solid var(--line); }
 section.listen { border-top: 0; padding-top: 12px; }
-.story h2.series { color: var(--text); font-size: 15px; letter-spacing: .3em; }
+/* 題は映像の題と同じ形＝Helvetica Neue Medium・大文字・字間を広く・縁も影もなし（Video Maker dml_type.py） */
+.story h2.series { margin: 8px 0 6px; color: var(--text); font-size: 30px; font-weight: 500; letter-spacing: .22em; line-height: 1.2; text-transform: none; text-align: center; }
+.story p.intro { text-align: center; color: var(--muted); margin-bottom: 16px; }
+.embed-short { position: relative; width: 100%; max-width: 300px; margin: 0 auto; aspect-ratio: 9 / 16; background: #111520; border-radius: 12px; overflow: hidden; }
+.embed-short #youtube-embed, .embed-short iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.story .ai-note { text-align: center; }
 .ai-note { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
 h2 { margin: 0 0 12px; font-size: 12px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
 .story p { margin: 0 0 12px; }
@@ -78,3 +83,4 @@ main { position: relative; }
 .lang { position: absolute; top: 10px; right: 10px; z-index: 2; display: flex; gap: 4px; }
 .lang button { font: 500 11px/1 "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: .06em; color: var(--text); background: rgba(11,13,18,.55); border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 6px 9px; cursor: pointer; }
 .lang button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+.button.button-outline { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.35); }

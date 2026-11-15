@@ -8,7 +8,7 @@
     PIXEL_ID: "2274349289802625",                   // YW の広告アカウントのピクセル「YAMAKEN.WILD site」（2026-11-14 作成）
     SPOTIFY_URI: "spotify:track:4eJJGgnir1jf80eSIGvyRN", // いま推す1曲＝TAIFU
     TRACK_NAME: "TAIFU",
-    YOUTUBE_ID: "C9PUmKzTyMo",                      // TAIFU の MV
+    YOUTUBE_ID: "_qfEIYR7e1Q",                      // DEBUG MY LIFE 第0章（プロローグ）のショート
     READ_MS: 10000,                                 // Read10s＝画面が見えている時間の合計
     LISTEN_MS: 20000                                // Listen＝実際に再生が進んだ時間の合計（未ログインは30秒の試聴）
   };
@@ -91,11 +91,15 @@
   sp.async = true;
   document.body.appendChild(sp);
 
+  // ---- YouTube のシリーズ（再生リスト）へ ----
+  var series = document.getElementById("series-youtube");
+  if (series) series.addEventListener("click", function () { send("YouTubeSeriesClick"); });
+
   // ---- Follow on Spotify ----
   var follow = document.getElementById("follow-spotify");
   if (follow) follow.addEventListener("click", function () { send("SpotifyFollowClick", { track: CONFIG.TRACK_NAME }); });
 
-  // ---- YouTube の MV：見える位置に来たら読み込む・再生したら YouTubePlay ----
+  // ---- YouTube のプロローグ：見える位置に来たら読み込む・再生したら YouTubePlay ----
   function loadYouTube() {
     window.onYouTubeIframeAPIReady = function () {
       /* global YT */
