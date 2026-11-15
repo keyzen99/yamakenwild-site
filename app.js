@@ -14,6 +14,8 @@
   };
 
   var DEBUG = /[?&]debug=1\b/.test(location.search);
+  // 公開のページだけがピクセルへ送る（手元の確認 localhost などの行動を広告の学習に混ぜない）
+  var LIVE = /(^|\.)yamakenwild\.com$/.test(location.hostname);
   var fired = {};
   var debugEl = document.getElementById("debug");
   var debugLines = [];
@@ -26,7 +28,7 @@
   }
 
   // ---- Meta のピクセル（ID があるときだけ読み込む） ----
-  if (CONFIG.PIXEL_ID) {
+  if (CONFIG.PIXEL_ID && LIVE) {
     /* eslint-disable */
     !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
     /* eslint-enable */
@@ -53,7 +55,7 @@
       if (name === "PageView") window.fbq("track", "PageView");
       else window.fbq("trackCustom", name, params);
     }
-    log("event " + name + " " + JSON.stringify(params) + (CONFIG.PIXEL_ID ? "" : "（PIXEL_ID 未設定＝送っていない）"));
+    log("event " + name + " " + JSON.stringify(params) + (CONFIG.PIXEL_ID && LIVE ? "" : "（送っていない＝公開のページではない）"));
   }
 
   send("PageView");
