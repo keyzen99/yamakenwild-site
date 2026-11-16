@@ -19,7 +19,8 @@ main { max-width: 520px; margin: 0 auto; }
 a { color: var(--text); }
 
 .hero { position: relative; margin: 0; }
-.hero img { display: block; width: 100%; height: auto; max-height: 72vh; object-fit: cover; object-position: center top; }
+/* 最初の画面に再生（Spotify）とフォローのボタンまで入れる＝絵は画面の半分まで（2026-11-16・10秒いた22人のうち再生を押したのは1人＝再生が画面の外だった） */
+.hero img { display: block; width: 100%; height: auto; max-height: 50vh; max-height: 50svh; object-fit: cover; object-position: center 30%; }
 .hero::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(to bottom, rgba(11,13,18,0) 45%, rgba(11,13,18,.85) 85%, var(--bg) 100%);
