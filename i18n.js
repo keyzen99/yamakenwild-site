@@ -5,7 +5,7 @@
   var S = {
     en: {
       who: "SF stories, told in songs and visuals.",
-      sub: "Alternative R&B from Tokyo. Human creativity, extended with technology.",
+      sub: "Japanese Synth Soul music from Tokyo. Human creativity, extended with technology.",
       intro: "The first story.",
       series: "Watch the series on YouTube",
       ainote: "Visuals made with AI.",
@@ -25,7 +25,7 @@
     },
     id: {
       who: "Kisah fiksi ilmiah, dituturkan lewat lagu dan visual.",
-      sub: "R&B alternatif dari Tokyo. Kreativitas manusia, diperluas dengan teknologi.",
+      sub: "Musik Japanese Synth Soul dari Tokyo. Kreativitas manusia, diperluas dengan teknologi.",
       intro: "Kisah pertamanya.",
       series: "Tonton serinya di YouTube",
       ainote: "Visual dibuat dengan AI.",
@@ -45,7 +45,7 @@
     },
     ja: {
       who: "SF の物語を、歌と映像で描く。",
-      sub: "東京発、オルタナティブ R&B。人の創造を、テクノロジーでかたちにする。",
+      sub: "東京発、シンセ・ソウル。人の創造を、テクノロジーでかたちにする。",
       intro: "その最初の物語。",
       series: "YouTube でシリーズを観る",
       ainote: "映像は AI でつくっています。",
@@ -65,7 +65,7 @@
     },
     es: {
       who: "Historias de ciencia ficción, contadas en canciones e imágenes.",
-      sub: "R&B alternativo desde Tokio. Creatividad humana, ampliada con tecnología.",
+      sub: "Japanese Synth Soul desde Tokio. Creatividad humana, ampliada con tecnología.",
       intro: "La primera historia.",
       series: "Mira la serie en YouTube",
       ainote: "Imágenes creadas con IA.",
