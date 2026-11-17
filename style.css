@@ -20,7 +20,7 @@ a { color: var(--text); }
 
 .hero { position: relative; margin: 0; }
 /* 最初の画面に再生（Spotify）とフォローのボタンまで入れる＝絵は画面の半分まで（2026-11-16・10秒いた22人のうち再生を押したのは1人＝再生が画面の外だった） */
-.hero img { display: block; width: 100%; height: auto; max-height: 50vh; max-height: 50svh; object-fit: cover; object-position: center 30%; }
+.hero > img { display: block; width: 100%; height: auto; max-height: 50vh; max-height: 50svh; object-fit: cover; object-position: center 30%; }
 .hero::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(to bottom, rgba(11,13,18,0) 45%, rgba(11,13,18,.85) 85%, var(--bg) 100%);
@@ -28,7 +28,9 @@ a { color: var(--text); }
 }
 .hero-text { position: absolute; left: 20px; right: 20px; bottom: 16px; z-index: 1; }
 .eyebrow { margin: 0; font-size: 12px; font-weight: 500; letter-spacing: .3em; color: var(--accent); }
-h1 { margin: 4px 0 6px; font-size: 32px; font-weight: 500; letter-spacing: .08em; }
+/* 名前は太く（オーナー 2026-11-18）。横にアーティスト写真の丸いアイコン＝配信のアイコンと同じ写真 */
+h1 { margin: 4px 0 6px; font-size: 32px; font-weight: 700; letter-spacing: .08em; display: flex; align-items: center; gap: 10px; }
+h1 .avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; flex: none; }
 .who { margin: 0; font-size: 17px; font-weight: 500; color: var(--text); }
 .sub { margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: rgba(233,236,241,.78); }
 
