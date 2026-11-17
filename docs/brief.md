@@ -35,6 +35,7 @@
 | **Listen** | Spotify の埋め込みで一定時間聴いたとき（iFrame API の `playback_update` の `position` で判定。秒数は試作で決める。ログインしていない人は30秒の試聴になる） | **広告の本命の目標** |
 | SpotifyFollowClick | 「Follow on Spotify」を押したとき | 次の段の目安 |
 | YouTubePlay | MV の埋め込みを再生したとき（任意） | 参考 |
+| **Engaged** | Listen・YouTubePlay・YouTubeSeriesClick・SpotifyFollowClick のどれかが最初に起きたとき（1回だけ・`via` に元の行動） | **広告の目標（2026-11-17 から・MUS-149）**。Read10s は読んだだけの人に寄った・Listen 単独は件数が足りない |
 
 - ピクセルは COO が YW の広告アカウントで作り、ID を渡す。
 - 独自ドメインは Meta でドメインの持ち主として認証する（DNS の TXT）。

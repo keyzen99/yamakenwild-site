@@ -13,6 +13,7 @@
     LISTEN_MS: 20000                                // Listen＝実際に再生が進んだ時間の合計（未ログインは30秒の試聴）
   };
 
+  var ENGAGED_FROM = ["Listen", "YouTubePlay", "YouTubeSeriesClick", "SpotifyFollowClick"];
   var DEBUG = /[?&]debug=1\b/.test(location.search);
   // 公開のページだけがピクセルへ送る（手元の確認 localhost などの行動を広告の学習に混ぜない）
   var LIVE = /(^|\.)yamakenwild\.com$/.test(location.hostname);
@@ -56,6 +57,8 @@
       else window.fbq("trackCustom", name, params);
     }
     log("event " + name + " " + JSON.stringify(params) + (CONFIG.PIXEL_ID && LIVE ? "" : "（送っていない＝公開のページではない）"));
+    // Engaged＝音楽に向かって一歩動いた（聴いた・YouTube を見た／開いた・Spotify のページを開いた）の最初の1回。広告の目標（MUS-149・2026-11-17）
+    if (ENGAGED_FROM.indexOf(name) >= 0) send("Engaged", { via: name });
   }
 
   send("PageView");

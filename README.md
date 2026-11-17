@@ -6,7 +6,7 @@ YAMAKEN.WILD の公式ページ（1枚・静的）。広告や SNS から初め�
 ```sh
 python3 -m http.server 8787   # → http://localhost:8787/?debug=1
 ```
-`?debug=1` を付けると、送った行動（PageView・Read10s・SpotifyPlay・Listen・SpotifyFollowClick・YouTubePlay）が画面の下に出る。
+`?debug=1` を付けると、送った行動（PageView・Read10s・SpotifyPlay・Listen・SpotifyFollowClick・YouTubePlay・YouTubeSeriesClick・Engaged）が画面の下に出る。
 
 ## 設定（app.js の先頭の CONFIG）
 - `PIXEL_ID`：Meta のピクセルの ID。空のあいだは何も送らない
