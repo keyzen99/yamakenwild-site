@@ -120,10 +120,16 @@
   function spotifyAppUrl(web, ua) {
     var id = (web.match(/open\.spotify\.com\/artist\/(\w+)/) || [])[1];
     if (!id) return null;
-    if (/Android/i.test(ua)) return "intent://open.spotify.com/artist/" + id + "#Intent;scheme=https;package=com.spotify.music;S.browser_fallback_url=" + encodeURIComponent(web) + ";end";
-    if (/Instagram|FBAN|FBAV|FB_IAB/.test(ua)) return "spotify:artist:" + id;
+    var meta = /Instagram|FBAN|FBAV|FB_IAB/.test(ua);
+    // Android の中のブラウザ（wv）は intent を扱わないとエラーの画面になって戻れない＝ふつうのブラウザと Meta の中のブラウザだけ
+    if (/Android/i.test(ua)) return meta || !/; wv\)/.test(ua) ? "intent://open.spotify.com/artist/" + id + "#Intent;scheme=https;package=com.spotify.music;S.browser_fallback_url=" + encodeURIComponent(web) + ";end" : null;
+    if (meta) return "spotify:artist:" + id;
     return null;
   }
+
+  // ---- Apple Music（控えめ・2026-11-21）：AppleMusicClick。Engaged には数えない（広告の目標に入れるかは 11/27 に決める） ----
+  var apple = document.querySelectorAll("a.apple-music");
+  for (var a = 0; a < apple.length; a++) apple[a].addEventListener("click", function () { send("AppleMusicClick", { place: this.getAttribute("data-place") }); });
 
   function openApp(app, web) {
     var t0 = Date.now(), left = false;

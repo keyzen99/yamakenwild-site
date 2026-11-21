@@ -19,6 +19,7 @@
       listen: "Listen",
       follow: "Follow on Spotify",
       hint: "Opens the official Spotify app or site. Nothing to sign in to here.",
+      apple: "Also on Apple Music",
       watch: "Watch",
       links: "Follow the story",
       pixel: "This page uses the Meta Pixel to learn which ads bring listeners. It never asks you to sign in or enter anything."
@@ -39,6 +40,7 @@
       listen: "Dengarkan",
       follow: "Ikuti di Spotify",
       hint: "Membuka aplikasi atau situs resmi Spotify. Tidak perlu masuk di sini.",
+      apple: "Juga ada di Apple Music",
       watch: "Tonton",
       links: "Ikuti kisahnya",
       pixel: "Halaman ini memakai Meta Pixel untuk mengetahui iklan mana yang membawa pendengar. Halaman ini tidak pernah meminta Anda masuk atau mengisi apa pun."
@@ -59,6 +61,7 @@
       listen: "聴く",
       follow: "Spotify でフォロー",
       hint: "Spotify の公式のアプリかサイトが開きます。このページでログインすることはありません。",
+      apple: "Apple Music でも聴けます",
       watch: "観る",
       links: "物語を追う",
       pixel: "このページは、どの広告から聴いてくれる人が来たかを知るために Meta ピクセルを使っています。ログインや入力を求めることはありません。"
@@ -79,6 +82,7 @@
       listen: "Escuchar",
       follow: "Seguir en Spotify",
       hint: "Abre la app o el sitio oficial de Spotify. Aquí no tienes que iniciar sesión.",
+      apple: "También en Apple Music",
       watch: "Ver",
       links: "Sigue la historia",
       pixel: "Esta página usa el Meta Pixel para saber qué anuncios traen oyentes. Nunca te pide iniciar sesión ni introducir datos."

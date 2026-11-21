@@ -23,5 +23,14 @@
 - 4言語（EN・ID・JA・ES）とも同じ作り。
 - 11/27 に新曲 NEGAU の公開と広告の追加があるので、それより前に出せるとよい。
 
+## 追加（2026-11-21 オーナー OK）：Apple Music を控えめに足す
+- なぜ：行き先が Spotify と YouTube だけなので、Spotify を使っていない人はページで止まる。ただし北極星は Spotify フォロワー＋YouTube 登録＝Apple Music は数えない。Spotify を押す人を分けないよう、**Spotify は主のボタンのまま**にする。
+- やること：
+  1. Spotify のフォローボタンの下に、小さなテキストのリンクで「Apple Music でも聴ける」（4言語・英語の例 Also on Apple Music）。ボタンの形にしない。
+  2. 下のリンク一覧（Follow the story）に Apple Music を1行足す。
+  3. 押したらピクセルに新しいイベント `AppleMusicClick` を送る。**Engaged には数えない**（広告の目標に入れるかは 11/27 に Steve が決める）。既存のイベント名は変えない。
+- リンク先（iTunes Search API で確認・アーティスト ID 1895380795）：`https://music.apple.com/jp/artist/yamaken-wild/1895380795`。国のコード（jp）のままだとウェブでは日本のストアが開く。見る人の国のストアへ回す `https://geo.music.apple.com/artist/yamaken-wild/1895380795` が使えるかを確かめて、使えるならそちらに。Apple Music アプリが入っていればアプリで開くか、iPhone で確かめる。
+- 公開はボタンの修正と一緒に1回で。文言はオーナーの承認（push の前の確認に全文を入れる）。
+
 ## 今回はやらないこと
 - ボタンの上に「フォローする理由」の1行を足す案は、オーナーが 11/21 に「今回はボタンの修正だけ」と決めた＝入れない（修正の効き目だけを測るため）。
