@@ -10,8 +10,7 @@
     TRACK_NAME: "TAIFU",
     YOUTUBE_ID: "_qfEIYR7e1Q",                      // DEBUG MY LIFE 第0章（プロローグ）のショート
     READ_MS: 10000,                                 // Read10s＝画面が見えている時間の合計
-    LISTEN_MS: 20000,                               // Listen＝実際に再生が進んだ時間の合計（未ログインは30秒の試聴）
-    APP_WAIT_MS: 1500                               // Follow：アプリへ移れなかったとみなして open.spotify.com へ回すまでの時間
+    LISTEN_MS: 20000                                // Listen＝実際に再生が進んだ時間の合計（未ログインは30秒の試聴）
   };
 
   var ENGAGED_FROM = ["Listen", "YouTubePlay", "YouTubeSeriesClick", "SpotifyFollowClick"];
@@ -101,53 +100,15 @@
   var series = document.getElementById("series-youtube");
   if (series) series.addEventListener("click", function () { send("YouTubeSeriesClick"); });
 
-  // ---- Follow on Spotify：押した時点で SpotifyFollowClick を送り、Spotify のアプリでアーティストのページを開く（2026-11-21） ----
-  // 広告から来た人は Instagram の中のブラウザで見ている。そこで open.spotify.com を開くとアプリに渡らず、ログインを求められて止まる。
-  // ・Android：intent の URL でアプリを開く。アプリが無ければ Chrome が browser_fallback_url（open.spotify.com）へ回す
-  // ・iPhone・iPad の Instagram・Facebook の中のブラウザ：spotify: の URL でアプリを開く
-  // ・それ以外（iPhone の Safari・パソコンなど）：ふつうのリンクのまま（Safari では open.spotify.com がそのままアプリを開く）
-  // アプリへ移れなかった（APP_WAIT_MS たってもページが見えたまま）ときだけ、同じ画面で open.spotify.com を開く
+  // ---- Follow on Spotify：open.spotify.com のふつうのリンクのまま ----
+  // iPhone の Instagram の中でも、このリンクを押せば Spotify アプリが開く（2026-11-21 オーナーの実機）。
+  // spotify: で開いて自動で open.spotify.com へ切り替える作りは、Instagram の中で「ウェブサイトを読み込めませんでした」になった＝使わない
   var follow = document.getElementById("follow-spotify");
-  if (follow) follow.addEventListener("click", function (e) {
-    send("SpotifyFollowClick", { track: CONFIG.TRACK_NAME }); // ピクセルは keepalive・sendBeacon で送るので、画面が移っても届く
-    var web = follow.href;
-    var app = spotifyAppUrl(web, navigator.userAgent);
-    if (!app) return;
-    e.preventDefault();
-    openApp(app, web);
-  });
-
-  function spotifyAppUrl(web, ua) {
-    var id = (web.match(/open\.spotify\.com\/artist\/(\w+)/) || [])[1];
-    if (!id) return null;
-    var meta = /Instagram|FBAN|FBAV|FB_IAB/.test(ua);
-    // Android の中のブラウザ（wv）は intent を扱わないとエラーの画面になって戻れない＝ふつうのブラウザと Meta の中のブラウザだけ
-    if (/Android/i.test(ua)) return meta || !/; wv\)/.test(ua) ? "intent://open.spotify.com/artist/" + id + "#Intent;scheme=https;package=com.spotify.music;S.browser_fallback_url=" + encodeURIComponent(web) + ";end" : null;
-    if (meta) return "spotify:artist:" + id;
-    return null;
-  }
+  if (follow) follow.addEventListener("click", function () { send("SpotifyFollowClick", { track: CONFIG.TRACK_NAME }); });
 
   // ---- Apple Music（控えめ・2026-11-21）：AppleMusicClick。Engaged には数えない（広告の目標に入れるかは 11/27 に決める） ----
   var apple = document.querySelectorAll("a.apple-music");
   for (var a = 0; a < apple.length; a++) apple[a].addEventListener("click", function () { send("AppleMusicClick", { place: this.getAttribute("data-place") }); });
-
-  function openApp(app, web) {
-    var t0 = Date.now(), left = false;
-    function leave() { left = true; }
-    function onVisibility() { if (document.visibilityState === "hidden") left = true; }
-    document.addEventListener("visibilitychange", onVisibility);
-    window.addEventListener("pagehide", leave);
-    setTimeout(function () {
-      document.removeEventListener("visibilitychange", onVisibility);
-      window.removeEventListener("pagehide", leave);
-      // アプリへ移ると、ページが裏に回る（hidden・pagehide）か、裏でタイマーが止まって遅れて動く。どちらでもなければアプリが無い・開けなかった
-      if (left || document.visibilityState === "hidden" || Date.now() - t0 > CONFIG.APP_WAIT_MS + 1000) return;
-      log("follow → web（アプリへ移れなかった）" + web);
-      location.href = web;
-    }, CONFIG.APP_WAIT_MS);
-    log("follow → app " + app);
-    location.href = app;
-  }
 
   // ---- YouTube のプロローグ：見える位置に来たら読み込む・再生したら YouTubePlay ----
   function loadYouTube() {
